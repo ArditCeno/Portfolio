@@ -60,6 +60,8 @@
  
   a{color:inherit; text-decoration:none;}
   .wrap{max-width:1080px; margin:0 auto; padding:0 32px; position:relative; z-index:2;}
+  .glass{background:var(--glass); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--line);}
+  .glass-tag{display:inline-block; background:var(--glass); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--line); padding:8px 14px;}
  
   /* ---------- nav (floating pill) ---------- */
   header{
@@ -163,8 +165,10 @@
   .section-tag{font-family:var(--mono); font-size:12px; color:var(--muted-2); letter-spacing:0.08em;}
   h2{font-family:var(--display); font-size:clamp(28px,4vw,38px); font-weight:600; letter-spacing:-0.01em;}
  
-  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:64px;}
+  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:64px; align-items:start;}
+  .about-text{background:var(--glass); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--line); padding:28px;}
   .about-text p{color:var(--muted); font-size:16px; margin-bottom:18px; max-width:60ch;}
+  .about-text p:last-child{margin-bottom:0;}
   .about-text strong{color:var(--text); font-weight:600;}
   .langs{border:1px solid var(--line); background:var(--glass); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);}
   .lang-row{
@@ -177,10 +181,10 @@
   .bar span{position:absolute; inset:0; background:var(--cyan);}
  
   .timeline{position:relative; padding-left:32px;}
-  .timeline::before{content:''; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--line);}
-  .tl-item{position:relative; padding-bottom:48px;}
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-dot{position:absolute; left:-32px; top:5px; width:11px; height:11px; border-radius:50%; background:var(--ink); border:2px solid var(--amber);}
+  .timeline::before{content:''; position:absolute; left:5px; top:14px; bottom:14px; width:1px; background:var(--line);}
+  .tl-item{position:relative; padding:22px 24px; margin-bottom:16px; background:var(--glass); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--line);}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-dot{position:absolute; left:-32px; top:26px; width:11px; height:11px; border-radius:50%; background:var(--ink); border:2px solid var(--amber);}
   .tl-head{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; align-items:baseline; margin-bottom:10px;}
   .tl-role{font-family:var(--display); font-size:20px; font-weight:600;}
   .tl-date{font-family:var(--mono); font-size:12px; color:var(--muted-2);}
@@ -292,6 +296,9 @@
  
   footer{padding:100px 0 60px; border-top:1px solid var(--line);}
   .contact-cta h2{max-width:600px; margin-bottom:24px;}
+  .contact-cta h3{font-family:var(--display); font-size:clamp(22px,3vw,30px); font-weight:600; letter-spacing:-0.01em; max-width:640px; line-height:1.25;}
+  .contact-cta .roles-summary p{color:var(--muted); font-size:15px; margin-bottom:8px;}
+  .contact-cta .roles-summary strong{color:var(--text); font-weight:600;}
   .contact-rows{display:flex; flex-wrap:wrap; gap:14px; margin-top:36px;}
   .contact-row{
     font-family:var(--mono); font-size:14px; border:1px solid var(--line);
@@ -301,7 +308,8 @@
   .contact-row:hover{border-color:var(--cyan-text); color:var(--cyan-text);}
   .contact-row .k{color:var(--muted-2); font-size:11px; text-transform:uppercase; letter-spacing:0.06em;}
   .foot-bottom{
-    margin-top:70px; padding-top:24px; border-top:1px solid var(--line);
+    margin-top:70px; padding:18px 22px;
+    background:var(--glass); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--line);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
     font-family:var(--mono); font-size:11px; color:var(--muted-2);
   }
@@ -645,7 +653,7 @@
         <div class="lab-meta"><span class="lab-lang">HTML</span><span>utility app</span></div>
       </div>
     </div>
-    <p style="margin-top:20px; font-family:var(--mono); font-size:12px; color:var(--muted-2);">→ full history at <a href="https://github.com/ArditCeno" target="_blank" rel="noopener" style="color:var(--cyan-text);">github.com/ArditCeno</a></p>
+    <p class="glass-tag" style="margin-top:20px; font-family:var(--mono); font-size:12px; color:var(--muted-2);">→ full history at <a href="https://github.com/ArditCeno" target="_blank" rel="noopener" style="color:var(--cyan-text);">github.com/ArditCeno</a></p>
   </section>
  
   <section id="awards" class="wrap">
@@ -701,7 +709,7 @@
       <h2>Certifications</h2>
     </div>
  
-    <p class="reveal" style="font-family:var(--mono); font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:18px;">TestGorilla — proctored skill assessments</p>
+    <p class="reveal glass-tag" style="font-family:var(--mono); font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:18px;">TestGorilla — proctored skill assessments</p>
     <div class="readout reveal" style="grid-template-columns:repeat(5,1fr); margin-top:0;">
       <div class="readout-item">
         <div class="readout-val" data-reel="100th" aria-label="100th percentile">100th</div>
@@ -724,9 +732,9 @@
         <div class="readout-label">Data Structures — Arrays</div>
       </div>
     </div>
-    <p style="font-family:var(--mono); font-size:11px; color:var(--muted-2); margin-top:12px;">Percentile rank vs. all TestGorilla test-takers · issued May–Jul 2026, valid 2 years</p>
+    <p class="glass-tag" style="font-family:var(--mono); font-size:11px; color:var(--muted-2); margin-top:12px;">Percentile rank vs. all TestGorilla test-takers · issued May–Jul 2026, valid 2 years</p>
  
-    <p class="reveal" style="font-family:var(--mono); font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.08em; margin:48px 0 18px;">Courses &amp; workshops</p>
+    <p class="reveal glass-tag" style="font-family:var(--mono); font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.08em; margin:48px 0 18px;">Courses &amp; workshops</p>
     <div class="skills-grid reveal">
       <div class="skill-cat">
         <h4>Sololearn</h4>
@@ -761,7 +769,7 @@
       </div>
     </div>
  
-    <p class="reveal" style="font-family:var(--mono); font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.08em; margin:56px 0 18px;">Certificates on file</p>
+    <p class="reveal glass-tag" style="font-family:var(--mono); font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.08em; margin:56px 0 18px;">Certificates on file</p>
     <div class="cert-grid reveal">
       <div class="cert-card">
         <div class="cert-thumb" onclick="openLightbox('assets/certs/intl-weeks-cybersecurity-hackathon.jpg')">
@@ -892,11 +900,12 @@
  
   <section id="contact" style="border-bottom: 1px solid var(--line);">
   <div class="wrap contact-cta reveal">
-    <h3>Open to Junior roles in Tirana or Remote across:</h3>
-    
-    <div class="roles-summary" style="margin-bottom: 1.5rem;">
-      <p><strong>Software Engineering:</strong> Full-Stack, Frontend (React), Backend (Java/Python), Mobile (Flutter)</p>
-      <p><strong>Specialized Fields:</strong> Applied AI/ML, Application Security / Cybersecurity, and QA Automation</p>
+    <div class="glass" style="padding:28px; margin-bottom:1.5rem;">
+      <h3>Open to Junior roles in Tirana or Remote across:</h3>
+      <div class="roles-summary" style="margin-top:1rem;">
+        <p><strong>Software Engineering:</strong> Full-Stack, Frontend (React), Backend (Java/Python), Mobile (Flutter)</p>
+        <p><strong>Specialized Fields:</strong> Applied AI/ML, Application Security / Cybersecurity, and QA Automation</p>
+      </div>
     </div>
 
     <div class="contact-rows">
