@@ -2,7 +2,7 @@
 
 Welcome to the repository of my personal portfolio website. This site showcases my engineering profile, projects, and expertise spanning **Full-Stack Development, Applied AI, and Application Security**.
 
-🔗 **Live Demo:** [arditceno.github.io/Portfolio](https://arditceno.github.io/Portfolio/)
+🔗 **Live Demo:** [arditceno.github.io/Portfolio](https://arditceno.github.io/Portfolio/) (https://arditceno.vercel.app/)
 
 ---
 
